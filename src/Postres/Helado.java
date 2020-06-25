@@ -16,7 +16,9 @@ public class Helado extends Postres{
   
     public Helado(String sabor,double precioParcial){
        super(sabor,precioParcial);
-      
+       aderezos= new ArrayList<>();
+       this.sabor=sabor;
+       this.precioParcial = 7.85;
     }
     
     public double calcularPrecioFinal(){ 
