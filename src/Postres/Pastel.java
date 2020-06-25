@@ -12,13 +12,11 @@ import Adicionales.Aderezo;
  *
  * @author Pedro Mendoza
  */
-public class Pastel{
-    private String sabor;
-    private double precioParcial;
-    private ArrayList<Aderezo> aderezos;
-    
-    public Pastel(String sabor){
-        aderezos= new ArrayList<>();
+public class Pastel extends Postres{
+   
+    public Pastel(String sabor,double precioParcial){
+    	super(sabor,precioParcial);
+    	aderezos= new ArrayList<>();
         this.sabor=sabor;
         this.precioParcial = 15.55;
     }
