@@ -23,6 +23,8 @@ public class Postres {
 	        aderezos.remove(aderezo);
 	    }
 	 
-	 
+	 public double getPrecio() {
+		 return this.precioParcial;
+	 }
 	   
 }

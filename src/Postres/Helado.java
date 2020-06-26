@@ -24,6 +24,7 @@ public class Helado extends Postres{
     public ArrayList<Aderezo> getAderezos() {
         return aderezos;
     }
+    
 
     @Override
     public String toString() {
