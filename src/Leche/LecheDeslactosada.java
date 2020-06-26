@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Leche;
+import Postres.*;
 
 /**
  *
@@ -12,14 +13,14 @@ package Leche;
 public class LecheDeslactosada extends LecheEntera {
     
     @Override
-    public void usarHelado() {
-        System.out.println("Usando leche deslactosada");
+    public void usar(Postres postre) {
+    	if(postre.getClass()==Pastel.class) {
+    		System.out.print(this.getClass()+": No se puede usar en pastel");
+    		System.out.print("Usando leche entera");
+    	}else {
+    		System.out.print("usando leche deslactosada");
+    	}
     }
-
-    @Override
-    public void usarPastel() {
-        // Lanzar error No se puede usar en pastel
-        throw new RuntimeException(this.getClass() + ": No se puede usar en pastel");
-    }
+        
         
 }
