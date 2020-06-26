@@ -6,7 +6,7 @@ public class ManejadorDePrecio {
 	
     public double calcularPrecioFinal(){
         double precioFinal;
-        precioFinal=(precioParcial+(precioParcial*0.12))+(aderezos.size()*0.50);
+        precioFinal=(precioParcial+(precioParcial*0.12))+(Postres.Postres.aderezos.size()*0.50);
         return precioFinal;
     }
     

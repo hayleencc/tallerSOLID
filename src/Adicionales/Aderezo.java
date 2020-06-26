@@ -3,12 +3,20 @@ package Adicionales;
 public abstract class Aderezo {
 	protected String nombre;
 	
-	public void setNombre(String nom) {
+	public Aderezo(String nom) {
 		this.nombre=nom;
 	}
 	
+	protected abstract void setNombre(String nom);
+
+	@Override
 	public String toString() {
-		return this.nombre=nombre.toUpperCase();
+		return "Aderezo [nombre=" + nombre.toUpperCase() + "]";
 	}
+	
+	
+		
+	
+	
 	
 }

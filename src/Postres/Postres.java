@@ -7,26 +7,20 @@ import Adicionales.Aderezo;
 public class Postres {
 	 protected String sabor;
 	 protected double precioParcial;
-	 protected ArrayList<Aderezo> aderezos;
+	 public static ArrayList<Aderezo> aderezos;
 	 
 	
-	 
-	 Postres(String sabor,double precioParcial){
-		 aderezos= new ArrayList<>();
+	 public Postres(String sabor){
 		 this.sabor = sabor;
-		 this.precioParcial = precioParcial;
 	 }
 	 
-	 public ArrayList<Aderezo> getAderezos() {
-	        return aderezos;
+	 
+	 public void anadirAderezoPostre(Aderezo aderezo){
+	        aderezos.add(aderezo);
 	    }
 
-	 public static void anadirAderezoPostre(Postres p,Aderezo aderezo){
-	        p.getAderezos().add(aderezo);
-	    }
-
-	   public static void quitarAderezoPostre(Postres p,Aderezo aderezo){
-	        p.getAderezos().remove(aderezo);
+	   public void quitarAderezoPostre(Aderezo aderezo){
+	        aderezos.remove(aderezo);
 	    }
 	 
 	 

@@ -22,7 +22,9 @@ public class Sistema {
         ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
         
         // Producir Helado
-        Helado helado_vainilla = new Helado("Vainilla");
+  
+        Postre helado_vainilla = new Helado("Vainilla");
+        helado_vainilla.anadirAderezoPostre(new Aderezo("Fresas"));
         OperacionesAderezo.anadirAderezoHelado(helado_vainilla, Aderezo.CREMA);
         OperacionesAderezo.anadirAderezoHelado(helado_vainilla, Aderezo.FRUTILLA);
         System.out.println(helado_vainilla);
