@@ -1,5 +1,7 @@
 package Procesos;
 
+import Postres.Postres;
+
 public class ManejadorDePrecio {
 	
 	protected double precioParcial;
@@ -9,14 +11,14 @@ public class ManejadorDePrecio {
 	}
 	
 	
-    public double calcularPrecioFinal(){
-        double precioFinal;
-        precioFinal=(precioParcial+(precioParcial*0.12))+(Postres.Postres.aderezos.size()*0.50);
+    public static double calcularPrecioFinal(Postres postres){
+    	double precioFinal;
+        precioFinal=(postres.getPrecioParcial()+(postres.getPrecioParcial()*0.12))+(postres.getAderezos().size()*0.50);
         return precioFinal;
     }
     
-    public String showPrecioFinal(){
-        return "Precio Final: $ " + calcularPrecioFinal();
+    public static String showPrecioFinal(Postres postres){
+        return "Precio Final: $ " + calcularPrecioFinal(postres);
     }
 
 }

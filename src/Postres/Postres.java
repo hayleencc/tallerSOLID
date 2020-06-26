@@ -11,10 +11,19 @@ public class Postres {
 	 
 	
 	 public Postres(String sabor){
+		 aderezos= new ArrayList<>();
 		 this.sabor = sabor;
 	 }
 	 
+	 public ArrayList<Aderezo> getAderezos() {
+	        return aderezos;
+	    }
+
 	 
+	    public void setAderezos(ArrayList<Aderezo> aderezos) {
+	        this.aderezos = aderezos;
+	    }
+	    
 	 public void anadirAderezoPostre(Aderezo aderezo){
 	        aderezos.add(aderezo);
 	    }
@@ -26,5 +35,8 @@ public class Postres {
 	 public double getPrecio() {
 		 return this.precioParcial;
 	 }
-	   
+	 
+	 public double getPrecioParcial() {
+	        return precioParcial;
+	    }
 }

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Principal;
+import java.util.ArrayList;
+
 import Adicionales.*;
 import Postres.*;
 import Procesos.*;
@@ -13,33 +15,32 @@ import Leche.*;
  * @author djurado
  */
 public class Sistema {
+
+    
     public static void main(String [ ] args){
-        // Producir un helado de vainilla y una torta de chocolate, 
-        // a ambos agregarles CREMA y FRUTILLAS
-        // y cambiar el tipo de leche por Leche Descremada
-        // Finalmente mostrar el precio final de cada uno
+    // Producir un helado de vainilla y una torta de chocolate, 
+    // a ambos agregarles CREMA y FRUTILLAS
+    // y cambiar el tipo de leche por Leche Deslactosada
+    ArrayList<Postres> arrPostres = new ArrayList<>();
+    ManejadorDeLeche mnj_leche = new ManejadorDeLeche(new LecheDescremada());
+    
+    // Producir Helado
+    Postres helado_vainilla = new Helado("Vainilla");
+    arrPostres.add(helado_vainilla);
+    // Producir Pastel
+    Postres pastel_chocolate = new Pastel("Chocolate");
+    arrPostres.add(pastel_chocolate);
+    
+    arrPostres.forEach(postre -> {
+        postre.anadirAderezoPostre(new Crema());
+        postre.anadirAderezoPostre(new Frutilla());
+        System.out.println(postre);
         LecheEntera leche = new LecheDeslactosada();
-        ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
-        
-        // Producir Helado
-        Helado helado_vainilla = new Helado("Vainilla");
-        helado_vainilla.anadirAderezoPostre(new Crema());
-        helado_vainilla.anadirAderezoPostre(new Frutilla());
-        System.out.println(helado_vainilla);
-        mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
-        System.out.println((new ManejadorDePrecio(helado_vainilla.getPrecio()).showPrecioFinal()));
-     
-        
-        // Producir Pastel
-        Pastel pastel_chocolate = new Pastel("Chocolate");
-        pastel_chocolate.quitarAderezoPostre(new Crema());
-        pastel_chocolate.anadirAderezoPostre(new Frutilla());
+        mnj_leche.cambiarTipoLeche(postre);
+        System.out.println(ManejadorDePrecio.showPrecioFinal(postre));
+    });        
+    
+}
 
-        System.out.println(pastel_chocolate);
-        mnj_leche.cambiarTipoLeche(leche, pastel_chocolate);
-        System.out.println((new ManejadorDePrecio(pastel_chocolate.getPrecio()).showPrecioFinal()));
 
-        
-        
-    }
 }
