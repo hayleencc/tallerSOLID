@@ -1,6 +1,5 @@
 # tallerSOLID
 1. Se esta violando el OCP para solucionarlo se creo la clase Postres ya que eso nos 
-da la opcion a que a futuro se puedan imnplemnetar otro tipo de postres. Lo que hicimos
 fue heredar las clases existentes de Helado y Pastel de la nueva clase padre Postre y 
 en ella creamos todas las variables que se van a necesitar para los postres como nombre,
 sabor, precioParcial y una lista de aderesos 
